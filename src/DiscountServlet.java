@@ -14,13 +14,15 @@ public class DiscountServlet extends HttpServlet {
         double percent = Double.parseDouble(request.getParameter("Discount Percent"));
         PrintWriter pw = response.getWriter();
         pw.print("<html>");
-        if ("T-shirt".equals(product)) {
-            pw.println("<p>The " + product + " have price: " + price+".\t</p>");
-            double discountAmount = price * percent * 0.01;
-            pw.println("<p>Discount amount: " + discountAmount+".\t</p>");
-            price = price - discountAmount;
-            pw.println("Price after discount: " + price+".\t");
-        }
+        pw.print("<h1>Display Discount</h1>");
+
+        pw.println("<p>The " + product + " have price: $" + price + ".\t</p>");
+        pw.print("<p>Discount Percent: " + percent + "%</p>");
+        double discountAmount = price * percent * 0.01;
+        pw.println("<p>Discount amount: $" + discountAmount + ".\t</p>");
+        price = price - discountAmount;
+        pw.println("Price after discount: $" + price + ".\t");
+
         pw.print("</html>");
     }
 
