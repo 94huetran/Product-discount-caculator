@@ -12,23 +12,50 @@
     <style type ="text/css">
       .discount{
         height:250px; width:350px;
-        margin:0;
-        padding:10px;
-        border:1px #CCC solid;
+        padding:10px 20px 20px;
+        border:1px black solid
+      }
+      h2{
+        color: olivedrab;
       }
       .discount input{
         padding:5px; margin:5px
+      }
+      label{
+        padding-right: 1em;
+        float:left;
+        width: 10em;
+      }
+      br{
+        clear: left;
+      }
+      #data input{
+        float: left;
+        width: 15em;
+        margin-bottom: 5em;
+      }
+      #button input{
+        float: left;
       }
     </style>
   </head>
   <body>
   <form method="post" action="/display-discount" >
     <div class="discount">
-      <h2>Discount</h2>
-      <input type="text" name="Product Description" size="50" placeholder="Product Description"/>
-      <input type="text" name="List price" size="50" placeholder="List price"/>
-      <input type="number" name="Discount Percent" size="50" placeholder="Discount Percent" min="0" max="100" step="10"/>
-      <input type="submit" value="Calculate Discount"/>
+      <h2>Product Discount Caculator</h2>
+      <label>Product Description:</label>
+      <input type="text" name="Product Description"/>
+      <br>
+      <label>List price:</label>
+      <input type="text" name="List price"/>
+      <br>
+      <label>Discount Percent:</label>
+      <input type="number" name="Discount Percent" min="0" max="100"/>
+      <br>
+      <div id = "button">
+        <label> </label>
+        <input type="submit" value="Calculate Discount"/>
+      </div>
     </div>
   </form>
   </body>
